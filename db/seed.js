@@ -1,22 +1,30 @@
 const Monster = require("../models/Monster");
-const monsters = require("./monsters.json");
+const monstersJson = require("./monsters.json");
+const monsterDetail = require("./monstersDetail.json");
+const Types = require("../models/Types");
 
-const monsterData = monsters.map((item) => {
+const monsters = monsterDetail.map((item) => {
   const monster = {};
-  monster.index = item.index;
-  monster.name = item.name;
+  (monster.index = item.index), (monster.name = item.name);
   monster.url = item.url;
-
-  return monster;
 });
-console.log(monstersData);
 
-Monster.remove({}).then(() => {
-  Monster.create(monsterData)
-    .then((monsters) => {
-      console.log(monsters);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+Monster.remove({});
+Monster.collection
+  .insert(monstersJson)
+  .then((monsters) => {
+    console.log(monstersJson);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+// Types.remove({});
+// Types.collection
+//   .insert(monsterDetail)
+//   .then((details) => {
+//     console.log(details);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
