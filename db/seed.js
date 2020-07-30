@@ -21,19 +21,25 @@ const monsters = monstersJson.results.map((item) => {
 //     console.log(err);
 //   });
 
-// Types.remove({});
-// Types.collection
-//   .insert(monsterDetail)
-//   .then((details) => {
-//     console.log(monsterDetail);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-
 Monster.deleteMany({}).then(() => {
   Monster.create(monsters).then((monsters) => {
     console.log(monsters);
+    // process.exit();
+  });
+});
+
+const details = monsterDetail.map((item) => {
+  const monster = {};
+  monster.name = item.name;
+  monster.size = item.size;
+  monster.alignment = item.alignment;
+  monster.armor_class = item.armor_class;
+  monster.strength = item.strength;
+  return monster;
+});
+Types.deleteMany({}).then(() => {
+  Types.create(details).then((details) => {
+    console.log(details);
     process.exit();
   });
 });

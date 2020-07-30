@@ -5,13 +5,9 @@ const Schema = mongoose.Schema;
 const typeSchema = new Schema({
   name: "String",
   size: "String",
+  alignment: "String",
   armor_class: Number,
-  special_abilities: [
-    {
-      name: "String",
-      desc: "String",
-    },
-  ],
+  strength: Number,
 });
 
 module.exports = mongoose.model("Types", typeSchema);

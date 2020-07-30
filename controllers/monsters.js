@@ -1,4 +1,5 @@
 const Monster = require("../models/Monster");
+const Types = require("../models/Types");
 
 module.exports = {
   index: (req, res) => {
