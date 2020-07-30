@@ -7,4 +7,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(require("./routes"));
 
-app.listen(3000, () => console.log("listening on port 3000"));
+app.set("port", process.env.PORT || 3000);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});

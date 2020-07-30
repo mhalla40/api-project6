@@ -1,5 +1,5 @@
 const express = require("express");
-const monsterController = require("../controllers/monsters");
+const monsterController = require("../controllers/Types");
 const router = express.Router();
 
 router.get("/", monsterController.index);
