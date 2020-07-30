@@ -19,12 +19,12 @@ Monster.collection
     console.log(err);
   });
 
-// Types.remove({});
-// Types.collection
-//   .insert(monsterDetail)
-//   .then((details) => {
-//     console.log(details);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+Types.remove({});
+Types.collection
+  .insert(monsterDetail)
+  .then((details) => {
+    console.log(monsterDetail);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
